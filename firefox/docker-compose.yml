@@ -1,0 +1,11 @@
+firefox:
+    build: .
+    privileged: true
+    volumes:
+        - "/tmp/.X11-unix/:/tmp/.X11-unix/"
+        - "${HOME}/Downloads:/home/firefox/Downloads"
+        - "/dev/shm:/dev/shm"
+        - "${HOME}/.Xauthority:/home/firefox/.Xauthority"
+        - "${HOME}/.mozilla:/home/firefox/.mozilla"
+    environment:
+        - "DISPLAY=unix${DISPLAY}"

@@ -1,0 +1,9 @@
+eclipse:
+    build: .
+    privileged: true
+    volumes:
+        - "/tmp/.X11-unix/:/tmp/.X11-unix/"
+    environment:
+        - "DISPLAY=:0"
+        - "MY_UID=1000"
+        - "MY_GID=1000"

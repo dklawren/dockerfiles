@@ -1,0 +1,16 @@
+google-chrome:
+    build: .
+    cpu_shares: 0
+    mem_limit: 512mb
+    devices:
+        - "/dev/snd:/dev/snd"
+    privileged: true
+    volumes:
+        - "/tmp/.X11-unix/:/tmp/.X11-unix/"
+        - "${HOME}/Downloads:/home/chrome/Downloads"
+        - "${HOME}/.config/google-chrome/:/data"
+        - "${HOME}/.Xauthority:/home/chrome/.Xauthority"
+        - "/dev/shm:/dev/shm"
+    environment:
+        - "DISPLAY=unix${DISPLAY}"
+
